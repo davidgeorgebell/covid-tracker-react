@@ -1,7 +1,14 @@
 import React from 'react';
+import DisplayContainer from './components/DisplayContainer';
 
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <main>
+        <DisplayContainer />
+      </main>
+    </div>
+  );
 }
 
 export default App;

@@ -53,7 +53,10 @@ img {
   max-width: 100%;
   display: block;
 }
-
+main {
+  height: 100vh;
+  width: 100vw;
+}
 /* Natural flow and rhythm in articles by default */
 article > * + * {
   margin-top: 1em;
