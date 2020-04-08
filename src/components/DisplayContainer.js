@@ -22,17 +22,21 @@ const DisplayContainer = () => {
   }, []);
 
   console.log(stats);
-  return (
+  return loading ? (
+    <h2>Loading...</h2>
+  ) : error ? (
+    <h2>ERROR!</h2>
+  ) : (
     <div style={{ textAlign: `center` }}>
       <h2>Confirmed:</h2>
       <span>
-        {stats.confirmed ? stats.confirmed.value : 'Sorry not available'}
+        {stats.confirmed ? stats.confirmed.value.toLocaleString() : null}
       </span>
       <h2>Deaths:</h2>
-      <span>{stats.deaths ? stats.deaths.value : 'Sorry not available'}</span>
+      <span>{stats.deaths ? stats.deaths.value.toLocaleString() : null}</span>
       <h2>Recovered:</h2>
       <span>
-        {stats.recovered ? stats.recovered.value : 'Sorry not available'}
+        {stats.recovered ? stats.recovered.value.toLocaleString() : null}
       </span>
     </div>
   );
