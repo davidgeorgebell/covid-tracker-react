@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const DisplayContainer = () => {
+const WorldStatsContainer = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [stats, setStats] = useState({});
@@ -21,13 +21,16 @@ const DisplayContainer = () => {
     fetchData();
   }, []);
 
-  console.log(stats);
-  return loading ? (
-    <h2>Loading...</h2>
-  ) : error ? (
+  return loading ? null : error ? (
     <h2>ERROR!</h2>
   ) : (
     <div style={{ textAlign: `center` }}>
+      <h1>
+        World Wide{' '}
+        <span role='img' aria-label='World Emoji'>
+          🌎
+        </span>
+      </h1>
       <h2>Confirmed:</h2>
       <span>
         {stats.confirmed ? stats.confirmed.value.toLocaleString() : null}
@@ -42,4 +45,4 @@ const DisplayContainer = () => {
   );
 };
 
-export default DisplayContainer;
+export default WorldStatsContainer;

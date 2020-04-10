@@ -1,11 +1,14 @@
 import React from 'react';
-import DisplayContainer from './components/DisplayContainer';
+
+import WorldStatsContainer from './components/WorldStatsContainer';
+import CountryStatsContainer from './components/CountryStatsContainer';
 
 function App() {
   return (
     <div>
       <main>
-        <DisplayContainer />
+        <WorldStatsContainer />
+        <CountryStatsContainer />
       </main>
     </div>
   );
