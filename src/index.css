@@ -80,7 +80,28 @@ main {
   width: 100vw;
   margin: 2rem auto;
 }
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
 
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #6f7780;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #000;
+}
 .table-wrapper {
   text-align: center;
   width: 350px;

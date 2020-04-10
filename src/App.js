@@ -18,6 +18,11 @@ function App() {
         <CountryStatsContainer />
         <WorldStatsContainer />
       </main>
+      <footer>
+        <a href='https://twitter.com/DavidGeorgeBell' alt='Creators Twitter'>
+          Made by @DavidGeorgeBell
+        </a>
+      </footer>
     </div>
   );
 }
