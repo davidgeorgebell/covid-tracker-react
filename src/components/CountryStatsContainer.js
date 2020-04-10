@@ -22,30 +22,41 @@ const CountryStatsContainer = () => {
     setLoading(true);
     fetchData();
   }, []);
-  console.log(stats);
 
   return loading ? null : error ? (
     <h2>Error getting stats!</h2>
   ) : (
-    <div>
-      <h1>
-        Britain
-        <span role='img' aria-label='British Flag Emoji'>
-          🇬🇧
-        </span>
-      </h1>
-      <h2>Confirmed:</h2>
-      <span>
-        {stats.confirmed ? stats.confirmed.value.toLocaleString() : null}
-      </span>
-      <h2>Deaths:</h2>
-      <span>
-        {stats.confirmed ? stats.confirmed.value.toLocaleString() : null}
-      </span>
-      <h2>Recovered:</h2>
-      <span>
-        {stats.recovered ? stats.recovered.value.toLocaleString() : null}
-      </span>
+    <div className='table-wrapper'>
+      <table>
+        <caption>
+          Great Britain{' '}
+          <span role='img' aria-label='British Flag Emoji'>
+            🇬🇧
+          </span>
+        </caption>
+        <thead>
+          <tr>
+            <th>Confirmed</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {stats.confirmed ? stats.confirmed.value.toLocaleString() : null}
+            </td>
+            <td>
+              {' '}
+              {stats.deaths ? stats.deaths.value.toLocaleString() : null}
+            </td>
+            <td>
+              {' '}
+              {stats.recovered ? stats.recovered.value.toLocaleString() : null}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

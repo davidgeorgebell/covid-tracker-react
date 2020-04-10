@@ -24,23 +24,33 @@ const WorldStatsContainer = () => {
   return loading ? null : error ? (
     <h2>ERROR!</h2>
   ) : (
-    <div style={{ textAlign: `center` }}>
-      <h1>
-        World Wide{' '}
-        <span role='img' aria-label='World Emoji'>
-          🌎
-        </span>
-      </h1>
-      <h2>Confirmed:</h2>
-      <span>
-        {stats.confirmed ? stats.confirmed.value.toLocaleString() : null}
-      </span>
-      <h2>Deaths:</h2>
-      <span>{stats.deaths ? stats.deaths.value.toLocaleString() : null}</span>
-      <h2>Recovered:</h2>
-      <span>
-        {stats.recovered ? stats.recovered.value.toLocaleString() : null}
-      </span>
+    <div className='table-wrapper'>
+      <table>
+        <caption>
+          World Wide{' '}
+          <span role='img' aria-label='World Emoji'>
+            🌎
+          </span>
+        </caption>
+        <thead>
+          <tr>
+            <th>Confirmed</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              {stats.confirmed ? stats.confirmed.value.toLocaleString() : null}
+            </td>
+            <td>{stats.deaths ? stats.deaths.value.toLocaleString() : null}</td>
+            <td>
+              {stats.recovered ? stats.recovered.value.toLocaleString() : null}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

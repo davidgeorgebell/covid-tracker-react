@@ -1,14 +1,22 @@
 import React from 'react';
 
-import WorldStatsContainer from './components/WorldStatsContainer';
 import CountryStatsContainer from './components/CountryStatsContainer';
+import WorldStatsContainer from './components/WorldStatsContainer';
 
 function App() {
   return (
-    <div>
+    <div className='app-wrapper'>
+      <header>
+        <h1>
+          <span role='img' aria-label='Virus Emoji'>
+            🦠
+          </span>{' '}
+          COVID19
+        </h1>
+      </header>
       <main>
-        <WorldStatsContainer />
         <CountryStatsContainer />
+        <WorldStatsContainer />
       </main>
     </div>
   );
